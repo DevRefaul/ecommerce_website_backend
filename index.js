@@ -4,6 +4,9 @@ const app = express()
 const allproducts = require("./Products.json")
 const electronics = require("./electronics.json")
 const fashion = require("./fashion.json")
+const furniture = require("./furniture.json")
+const plants = require("./plants.json")
+const trendingProducts = require("./trendingproducts.json")
 
 
 app.use(cors())
@@ -21,6 +24,15 @@ app.get("/fashion", (req, res) => {
 })
 app.get("/electronics", (req, res) => {
     res.send(electronics)
+})
+app.get("/furnitures", (req, res) => {
+    res.send(furniture)
+})
+app.get("/plants", (req, res) => {
+    res.send(plants)
+})
+app.get("/trendingProducts", (req, res) => {
+    res.send(trendingProducts)
 })
 
 
