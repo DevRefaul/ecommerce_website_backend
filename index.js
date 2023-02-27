@@ -36,6 +36,7 @@ app.get("/trendingProducts", (req, res) => {
 })
 
 app.get("/getSingleProductInfo", async (req, res) => {
+    try {
     const requestedProduct = req.query.name.replace(/"/g, '')
     const product = await allproducts.products.find((product) => {
         if (product.name == requestedProduct) {
@@ -55,6 +56,12 @@ app.get("/getSingleProductInfo", async (req, res) => {
             satus: 401,
         })
     }
+} catch (error) {
+    res.send({
+        message: error.message,
+        satus: 404,
+    })
+}
 
 })
 
