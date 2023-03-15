@@ -65,6 +65,31 @@ app.get("/getSingleProductInfo", async (req, res) => {
 
 })
 
+app.poast("/addSingleProduct", async (req, res) => {
+    try {
+    const porductInfo = req.query.product
+    if (product) {
+        res.send({
+            message: "Successfully Added Products",
+            satus: 200,
+           
+        })
+
+    } else {
+        res.send({
+            message: "Can't Find The Product",
+            satus: 401,
+        })
+    }
+} catch (error) {
+    res.send({
+        message: error.message,
+        satus: 404,
+    })
+}
+
+})
+
 
 
 app.listen(5000, () => {

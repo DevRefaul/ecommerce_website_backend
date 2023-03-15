@@ -10,7 +10,7 @@
 "brand": "Levi's",
 "type":"jeans",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -23,7 +23,7 @@
 "brand": "Adidas",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -36,7 +36,7 @@
 "brand": "Gucci",
 "type":"bag",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -49,7 +49,7 @@
 "brand": "Burberry",
 "type":"coat",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -62,7 +62,7 @@
 "brand": "Zara",
 "type":"tshirt",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 {
 "id": 6,
@@ -74,7 +74,7 @@
 "brand": "Louis Vuitton",
 "type":"bag",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -87,7 +87,7 @@
 "brand": "Nike",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -100,7 +100,7 @@
 "brand": "H&M",
 "type":"jacket",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -113,7 +113,7 @@
 "brand": "Prada",
 "type":"wallet",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -126,7 +126,7 @@
 "brand": "Ralph Lauren",
 "type":"tshirt",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 {
 "id": 11,
@@ -138,7 +138,7 @@
 "brand": "Gucci",
 "type":"bag",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -151,7 +151,7 @@
 "brand": "Burberry",
 "type":"coat",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -164,7 +164,7 @@
 "brand": "Off-White",
 "type":"belt",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -177,7 +177,7 @@
 "brand": "Balenciaga",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -190,7 +190,7 @@
 "brand": "Yeezy",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 
     ]

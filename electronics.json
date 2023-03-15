@@ -10,7 +10,7 @@
       "rating": 4.5,
       "brand":"Apple",
       "type":"mobile",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "rating": 4.8,
       "brand":"Samsung",
       "type":"mobile",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 3,
@@ -34,7 +34,7 @@
       "rating": 4.6,
       "brand":"Apple",
       "type":"tablet",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 4,
@@ -46,7 +46,7 @@
       "rating": 4.7,
       "brand":"Sony",
       "type":"gaming console",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 5,
@@ -58,7 +58,7 @@
       "rating": 4.3,
       "brand":"Apple",
       "type":"airpods",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 6,
@@ -70,7 +70,7 @@
       "rating": 4.2,
       "brand":"Google",
       "type":"homeassistant",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 7,
@@ -82,7 +82,7 @@
       "rating": 4.4,
       "brand":"Canon",
       "type":"camera",
-      "ratings":[]
+      "reviews":[]
     },    
     {
       "id": 8,
@@ -94,7 +94,7 @@
       "rating": 4.4,
       "brand":"Sony",
       "type":"tv",
-      "ratings":[]
+      "reviews":[]
     },
     {
     "id": 9,
@@ -106,7 +106,7 @@
     "brand": "Apple",
     "type":"mobile",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -119,7 +119,7 @@
     "brand": "Samsung",
     "type":"mobile",
     "rating": 4.7,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -132,7 +132,7 @@
     "brand": "Sony",
     "type":"gaming console",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -145,7 +145,7 @@
     "brand": "LG",
     "type":"tv",
     "rating": 4.3,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -158,7 +158,7 @@
     "brand": "Bose",
     "type":"headphone",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
     {
     "id": 14,
@@ -170,7 +170,7 @@
     "brand": "Apple",
     "type":"mobile",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -183,7 +183,7 @@
     "brand": "Samsung",
     "type":"mobile",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -196,7 +196,7 @@
     "brand": "Sony",
     "type":"gaming console",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -209,7 +209,7 @@
     "brand": "Dell",
     "type":"laptop",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -222,7 +222,7 @@
     "brand": "GoPro",
     "type":"action camera",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
 
 ]

@@ -12,7 +12,7 @@
     "pot_size": "6 inches",
     "height": "4-6 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 3,
@@ -38,7 +38,7 @@
     "pot_size": "4 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 4,
@@ -51,7 +51,7 @@
     "pot_size": "4 inches",
     "height": "Varies",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 5,
@@ -64,7 +64,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   }
       ,  
   {
@@ -78,7 +78,7 @@
     "pot_size": "6 inches",
     "height": "4-6 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 7,
@@ -91,7 +91,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 8,
@@ -104,7 +104,7 @@
     "pot_size": "4 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 9,
@@ -117,7 +117,7 @@
     "pot_size": "4 inches",
     "height": "Varies",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 10,
@@ -130,7 +130,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   }
 
 

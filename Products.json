@@ -10,7 +10,7 @@
 "brand": "Levi's",
 "type":"jeans",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -23,7 +23,7 @@
 "brand": "Adidas",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -36,7 +36,7 @@
 "brand": "Gucci",
 "type":"bag",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -49,7 +49,7 @@
 "brand": "Burberry",
 "type":"coat",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -62,7 +62,7 @@
 "brand": "Zara",
 "type":"tshirt",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 {
 "id": 6,
@@ -74,7 +74,7 @@
 "brand": "Louis Vuitton",
 "type":"bag",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -87,7 +87,7 @@
 "brand": "Nike",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -100,7 +100,7 @@
 "brand": "H&M",
 "type":"jacket",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -113,7 +113,7 @@
 "brand": "Prada",
 "type":"wallet",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -126,7 +126,7 @@
 "brand": "Ralph Lauren",
 "type":"tshirt",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 {
 "id": 11,
@@ -138,7 +138,7 @@
 "brand": "Gucci",
 "type":"bag",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -151,7 +151,7 @@
 "brand": "Burberry",
 "type":"coat",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -164,7 +164,7 @@
 "brand": "Off-White",
 "type":"belt",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -177,7 +177,7 @@
 "brand": "Balenciaga",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -190,7 +190,7 @@
 "brand": "Yeezy",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
         {
@@ -203,7 +203,7 @@
 "brand": "Ashley Furniture",
 "type":"sofa",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -216,7 +216,7 @@
 "brand": "Pottery Barn",
 "type":"table",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 
 {
@@ -229,7 +229,7 @@
 "brand": "Zinus",
 "type":"bed",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -242,7 +242,7 @@
 "brand": "Hemsworth",
 "type":"table",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -255,7 +255,7 @@
 "brand": "Home Styles",
 "type":"chair",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -268,7 +268,7 @@
 "brand": "IKEA",
 "type":"chair",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -281,7 +281,7 @@
 "brand": "West Elm",
 "type":"sofa",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
   {
     "id": 8,
@@ -293,7 +293,7 @@
     "brand": "Hulu Lu",
     "type":"sofa",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 9,
@@ -305,7 +305,7 @@
     "brand": "Lu Lu",
     "type":"table",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 10,
@@ -317,7 +317,7 @@
     "brand": "Fabric",
     "type":"chair",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
       {
       "id": 1,
@@ -329,7 +329,7 @@
       "rating": 4.5,
       "brand":"Apple",
       "type":"mobile",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 2,
@@ -341,7 +341,7 @@
       "rating": 4.8,
       "brand":"Samsung",
       "type":"mobile",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 3,
@@ -353,7 +353,7 @@
       "rating": 4.6,
       "brand":"Apple",
       "type":"tablet",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 4,
@@ -365,7 +365,7 @@
       "rating": 4.7,
       "brand":"Sony",
       "type":"gaming console",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 5,
@@ -377,7 +377,7 @@
       "rating": 4.3,
       "brand":"Apple",
       "type":"airpods",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 6,
@@ -389,7 +389,7 @@
       "rating": 4.2,
       "brand":"Google",
       "type":"homeassistant",
-      "ratings":[]
+      "reviews":[]
     },
     {
       "id": 7,
@@ -401,7 +401,7 @@
       "rating": 4.4,
       "brand":"Canon",
       "type":"camera",
-      "ratings":[]
+      "reviews":[]
     },    
     {
       "id": 8,
@@ -413,7 +413,7 @@
       "rating": 4.4,
       "brand":"Sony",
       "type":"tv",
-      "ratings":[]
+      "reviews":[]
     },
     {
     "id": 9,
@@ -425,7 +425,7 @@
     "brand": "Apple",
     "type":"mobile",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -438,7 +438,7 @@
     "brand": "Samsung",
     "type":"mobile",
     "rating": 4.7,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -451,7 +451,7 @@
     "brand": "Sony",
     "type":"gaming console",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -464,7 +464,7 @@
     "brand": "LG",
     "type":"tv",
     "rating": 4.3,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -477,7 +477,7 @@
     "brand": "Bose",
     "type":"headphone",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
     {
     "id": 14,
@@ -489,7 +489,7 @@
     "brand": "Apple",
     "type":"mobile",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -502,7 +502,7 @@
     "brand": "Samsung",
     "type":"mobile",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -515,7 +515,7 @@
     "brand": "Sony",
     "type":"gaming console",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -528,7 +528,7 @@
     "brand": "Dell",
     "type":"laptop",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     }
     ,
     {
@@ -541,7 +541,7 @@
     "brand": "GoPro",
     "type":"action camera",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
      {
     "id": 1,
@@ -554,7 +554,7 @@
     "pot_size": "6 inches",
     "height": "4-6 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 2,
@@ -567,7 +567,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 3,
@@ -580,7 +580,7 @@
     "pot_size": "4 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 4,
@@ -593,7 +593,7 @@
     "pot_size": "4 inches",
     "height": "Varies",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 5,
@@ -606,7 +606,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   }
       ,  
   {
@@ -620,7 +620,7 @@
     "pot_size": "6 inches",
     "height": "4-6 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 7,
@@ -633,7 +633,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 8,
@@ -646,7 +646,7 @@
     "pot_size": "4 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 9,
@@ -659,7 +659,7 @@
     "pot_size": "4 inches",
     "height": "Varies",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 10,
@@ -672,7 +672,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   }
 
     ]

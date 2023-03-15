@@ -10,7 +10,7 @@
     "brand": "Samsung",
     "type":"mobile",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
 
     {
@@ -23,7 +23,7 @@
     "brand": "Bose",
     "type":"headphone",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
     },
        {
       "id": 4,
@@ -35,7 +35,7 @@
       "rating": 4.7,
       "brand":"Sony",
       "type":"gaming console",
-      "ratings":[]
+      "reviews":[]
     },
         {
       "id": 3,
@@ -47,7 +47,7 @@
       "rating": 4.6,
       "brand":"Apple",
       "type":"tablet",
-      "ratings":[]
+      "reviews":[]
     },
     {
 "id": 2,
@@ -59,7 +59,7 @@
 "brand": "Adidas",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 {
 "id": 7,
@@ -71,7 +71,7 @@
 "brand": "Nike",
 "type":"sneakers",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
 ,
 {
@@ -84,7 +84,7 @@
 "brand": "H&M",
 "type":"jacket",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "pot_size": "6 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
     {
     "id": 8,
@@ -110,7 +110,7 @@
     "pot_size": "4 inches",
     "height": "6-8 ft",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
   {
     "id": 9,
@@ -123,7 +123,7 @@
     "pot_size": "4 inches",
     "height": "Varies",
     "rating": 4.4,
-    "ratings":[]
+    "reviews":[]
   },
 
 {
@@ -136,7 +136,7 @@
 "brand": "Zinus",
 "type":"bed",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 {
 "id": 5,
@@ -148,7 +148,7 @@
 "brand": "Home Styles",
 "type":"chair",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 },
 {
 "id": 6,
@@ -160,7 +160,7 @@
 "brand": "IKEA",
 "type":"chair",
 "rating": 4.4,
-"ratings":[]
+"reviews":[]
 }
     ]
 }
