@@ -72,7 +72,7 @@ app.get("/getSingleProductInfo", async (req, res) => {
 
 })
 
-app.poast("/addSingleProduct", async (req, res) => {
+app.post("/addSingleProduct", async (req, res) => {
     try {
     const porductInfo = req.query.product
     if (product) {
