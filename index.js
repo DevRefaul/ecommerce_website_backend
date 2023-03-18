@@ -1,6 +1,11 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
+require("dotenv").config()
+const {mongoClient} = require("mongodb")
+
+const uri = `mongodb + srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority`
+
 const allproducts = require("./Products.json")
 const electronics = require("./electronics.json")
 const fashion = require("./fashion.json")
@@ -9,14 +14,10 @@ const plants = require("./plants.json")
 const trendingProducts = require("./trendingproducts.json")
 
 
-/* mongodb + srv://Rafee:<password>@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority */
-
 
 app.use(cors())
 
-
-const user = process.env.DB_USER
-console.log(user);
+console.log(uri);
 
 
 app.get("/", (req, res) => {
