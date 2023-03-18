@@ -9,7 +9,14 @@ const plants = require("./plants.json")
 const trendingProducts = require("./trendingproducts.json")
 
 
+/* mongodb + srv://Rafee:<password>@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority */
+
+
 app.use(cors())
+
+
+const user = process.env.DB_USER
+console.log(user);
 
 
 app.get("/", (req, res) => {
