@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 require("dotenv").config()
-const { MongoClient } = require("mongodb")
+const { MongoClient, ObjectId } = require("mongodb")
 const app = express()
 
 app.use(cors())
@@ -19,15 +19,22 @@ const trendingProducts = require("./trendingproducts.json")
 
 
 
-const dbActions = async () => {
+async function dbActions() {
 
-    const Database = client.db("Rafez_Shop")
-    const products = Database.collection("products")
-    console.log(products);
+    // console.log(client);
+    const Database = client.db("Rafees-Shop")
+    const products = Database.collection("Products")
     try {
 
         app.get("/productsFromDB", async (req, res) => {
-
+            try {
+                const filter = { _id: ObjectId("64172dd53dfdc60a2f5f7e5a") }
+                const product = await products.findOne(filter)
+                res.send(product)
+            } catch (error) {
+                console.log(error.message);
+                res.send(error.message);
+            }
         })
 
 
