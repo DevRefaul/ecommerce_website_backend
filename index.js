@@ -4,7 +4,10 @@ require("dotenv").config()
 const { MongoClient } = require("mongodb")
 const app = express()
 
+app.use(cors())
+app.use(express.json())
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority`
+const client = new MongoClient(uri)
 
 const allproducts = require("./Products.json")
 const electronics = require("./electronics.json")
@@ -13,24 +16,28 @@ const furniture = require("./furniture.json")
 const plants = require("./plants.json")
 const trendingProducts = require("./trendingproducts.json")
 
-const client = new MongoClient(uri)
 
 
-app.use(cors())
 
-const dbActions = () => {
+const dbActions = async () => {
+
+    const Database = client.db("Rafez_Shop")
+    const products = Database.collection("products")
+    console.log(products);
     try {
+
+        app.get("/productsFromDB", async (req, res) => {
+
+        })
+
 
     } catch (error) {
         console.log(error.message);
     }
 }
-try {
-    dbActions()
-} catch (error) {
 
-    console.dir(e.message)
-}
+dbActions()
+
 
 app.get("/", (req, res) => {
     res.send("Server Is On Air")
