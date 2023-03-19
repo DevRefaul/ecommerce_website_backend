@@ -1,10 +1,10 @@
 const express = require("express")
 const cors = require("cors")
 require("dotenv").config()
-const {mongoClient} = require("mongodb")
+const { MongoClient } = require("mongodb")
 const app = express()
 
-const uri = `mongodb + srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority`
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority`
 
 const allproducts = require("./Products.json")
 const electronics = require("./electronics.json")
@@ -13,12 +13,24 @@ const furniture = require("./furniture.json")
 const plants = require("./plants.json")
 const trendingProducts = require("./trendingproducts.json")
 
+const client = new MongoClient(uri)
 
 
 app.use(cors())
 
-console.log(uri);
+const dbActions = () => {
+    try {
 
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+try {
+    dbActions()
+} catch (error) {
+
+    console.dir(e.message)
+}
 
 app.get("/", (req, res) => {
     res.send("Server Is On Air")
