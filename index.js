@@ -14,6 +14,7 @@ const client = new MongoClient(uri)
 const dbActions = async () => {
 
     const Products = client.db("Rafees_Shop").collection("Products")
+    const TrendingProducts = client.db("Rafees_Shop").collection("Trending_Products")
 
     try {
 
@@ -90,6 +91,26 @@ const dbActions = async () => {
 
         })
 
+        // api for getting trending products
+        app.get("/trendingProducts", async(req, res) => {
+            try {
+                
+                const trendingProducts = await TrendingProducts.find({}).toArray()
+                res.send({
+                    message: "Successful",
+                    status: 200,
+                    trendingProducts
+                })
+
+
+            } catch (error) {
+                res.send({
+                    message: "Failed",
+                    status: 401,
+                })
+            }
+        })
+
 
 
     } catch (error) {
@@ -102,35 +123,30 @@ const dbActions = async () => {
 dbActions().catch(err => console.log(err.message))
 
 
-
-app.get("/trendingProducts", (req, res) => {
-    res.send(trendingProducts)
-})
-
-app.post("/addSingleProduct", async (req, res) => {
-    try {
-    const porductInfo = req.query.product
-    if (product) {
-        res.send({
-            message: "Successfully Added Products",
-            satus: 200,
+// app.post("/addSingleProduct", async (req, res) => {
+//     try {
+//     const porductInfo = req.query.product
+//     if (product) {
+//         res.send({
+//             message: "Successfully Added Products",
+//             satus: 200,
            
-        })
+//         })
 
-    } else {
-        res.send({
-            message: "Can't Find The Product",
-            satus: 401,
-        })
-    }
-} catch (error) {
-    res.send({
-        message: error.message,
-        satus: 404,
-    })
-}
+//     } else {
+//         res.send({
+//             message: "Can't Find The Product",
+//             satus: 401,
+//         })
+//     }
+// } catch (error) {
+//     res.send({
+//         message: error.message,
+//         satus: 404,
+//     })
+// }
 
-})
+// })
 
 
 
