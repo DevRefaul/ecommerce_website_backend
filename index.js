@@ -21,20 +21,27 @@ const trendingProducts = require("./trendingproducts.json")
 
 const dbActions = async () => {
 
-    const Products = client.db("Rafee").collection("product")
+    const Products = client.db("Rafees_Shop").collection("Products")
 
     try {
 
-        app.get("/user", async (req, res) => {
-            const filter = { name: req.query.name }
-            const user = await Products.findOne(filter)
-            console.log(user);
-            res.send({ user })
+        // api for all products
+        app.get("/allproducts", async (req, res) => {
+
+            try {
+                const products = await Products.find({}).toArray()
+                res.send({
+                    message: "Successful",
+                    products
+                })
+            } catch (error) {
+                console.log(error.message);
+                res.send({
+                    message: error.message,
+                })
+            }
         })
-        app.get("/alluser", async (req, res) => {
-            const users = await Products.find({}).toArray()
-            console.log(users);
-        })
+
 
     } catch (error) {
         console.log(error.message);
@@ -50,9 +57,6 @@ app.get("/", (req, res) => {
     res.send("Server Is On Air")
 })
 
-app.get("/allProducts", (req, res) => {
-    res.send(allproducts)
-})
 app.get("/fashion", (req, res) => {
     res.send(fashion)
 })
