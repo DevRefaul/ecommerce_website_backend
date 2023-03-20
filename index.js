@@ -7,9 +7,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority`
-const uri = `mongodb+srv://Refaul:OWN7myvoBw0XNlyl@rafeesshop.7o4vkyz.mongodb.net/?retryWrites=true&w=majority`
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@rafeesshop.7o4vkyz.mongodb.net/?retryWrites=true&w=majority`
 const client = new MongoClient(uri)
 
 
@@ -34,9 +32,8 @@ const dbActions = async () => {
             res.send({ user })
         })
         app.get("/alluser", async (req, res) => {
-            const filter = { name: req.query.name }
-            const user = await Products.findOne(filter)
-            res.send({ user })
+            const users = await Products.find({}).toArray()
+            console.log(users);
         })
 
     } catch (error) {
