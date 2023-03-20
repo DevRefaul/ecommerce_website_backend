@@ -11,14 +11,6 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@rafeess
 const client = new MongoClient(uri)
 
 
-const allproducts = require("./Products.json")
-const electronics = require("./electronics.json")
-const fashion = require("./fashion.json")
-const furniture = require("./furniture.json")
-const plants = require("./plants.json")
-const trendingProducts = require("./trendingproducts.json")
-
-
 const dbActions = async () => {
 
     const Products = client.db("Rafees_Shop").collection("Products")
