@@ -42,6 +42,25 @@ const dbActions = async () => {
             }
         })
 
+        // api for fashion products
+        app.get("/productcategory", async (req, res) => {
+
+            try {
+                const productCategory = req.query.category
+                const filter = { category: productCategory }
+                const productsOfCategory = await Products.find(filter).toArray()
+                res.send({
+                    message: "Successful",
+                    productsOfCategory
+                })
+            } catch (error) {
+                console.log(error.message);
+                res.send({
+                    message: error.message,
+                })
+            }
+        })
+
 
     } catch (error) {
         console.log(error.message);
