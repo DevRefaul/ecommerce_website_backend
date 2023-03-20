@@ -6,8 +6,12 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority`
+
+
+// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.x2z0ouy.mongodb.net/?retryWrites=true&w=majority`
+const uri = `mongodb+srv://Refaul:OWN7myvoBw0XNlyl@rafeesshop.7o4vkyz.mongodb.net/?retryWrites=true&w=majority`
 const client = new MongoClient(uri)
+
 
 const allproducts = require("./Products.json")
 const electronics = require("./electronics.json")
@@ -17,33 +21,32 @@ const plants = require("./plants.json")
 const trendingProducts = require("./trendingproducts.json")
 
 
+const dbActions = async () => {
 
+    const Products = client.db("Rafee").collection("product")
 
-async function dbActions() {
-
-    // console.log(client);
-    const Database = client.db("Rafees-Shop")
-    const products = Database.collection("Products")
     try {
 
-        app.get("/productsFromDB", async (req, res) => {
-            try {
-                const filter = { _id: ObjectId("64172dd53dfdc60a2f5f7e5a") }
-                const product = await products.findOne(filter)
-                res.send(product)
-            } catch (error) {
-                console.log(error.message);
-                res.send(error.message);
-            }
+        app.get("/user", async (req, res) => {
+            const filter = { name: req.query.name }
+            const user = await Products.findOne(filter)
+            console.log(user);
+            res.send({ user })
         })
-
+        app.get("/alluser", async (req, res) => {
+            const filter = { name: req.query.name }
+            const user = await Products.findOne(filter)
+            res.send({ user })
+        })
 
     } catch (error) {
         console.log(error.message);
     }
+
+
 }
 
-dbActions()
+dbActions().catch(err => console.log(err.message))
 
 
 app.get("/", (req, res) => {
