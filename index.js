@@ -17,6 +17,11 @@ const dbActions = async () => {
 
     try {
 
+        // basic api
+        app.get("/", (req, res) => {
+            res.send("Server Is On Air")
+        })
+
         // api for all products
         app.get("/allproducts", async (req, res) => {
 
@@ -97,9 +102,6 @@ const dbActions = async () => {
 dbActions().catch(err => console.log(err.message))
 
 
-app.get("/", (req, res) => {
-    res.send("Server Is On Air")
-})
 
 app.get("/trendingProducts", (req, res) => {
     res.send(trendingProducts)
