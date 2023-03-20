@@ -76,18 +76,6 @@ app.get("/", (req, res) => {
     res.send("Server Is On Air")
 })
 
-app.get("/fashion", (req, res) => {
-    res.send(fashion)
-})
-app.get("/electronics", (req, res) => {
-    res.send(electronics)
-})
-app.get("/furnitures", (req, res) => {
-    res.send(furniture)
-})
-app.get("/plants", (req, res) => {
-    res.send(plants)
-})
 app.get("/trendingProducts", (req, res) => {
     res.send(trendingProducts)
 })
