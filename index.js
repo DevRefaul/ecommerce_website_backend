@@ -61,6 +61,39 @@ const dbActions = async () => {
             }
         })
 
+        // api for getting single product info
+
+        app.get("/getSingleProductInfo", async (req, res) => {
+            try {
+                const requestedProduct = req.query.name.replace(/"/g, '')
+                const product = await allproducts.products.find((product) => {
+                    if (product.name == requestedProduct) {
+                        return product
+                    }
+                })
+                if (product) {
+                    res.send({
+                        message: "Success",
+                        satus: 200,
+                        product: product
+                    })
+
+                } else {
+                    res.send({
+                        message: "Can't Find The Product",
+                        satus: 401,
+                    })
+                }
+            } catch (error) {
+                res.send({
+                    message: error.message,
+                    satus: 404,
+                })
+            }
+
+        })
+
+
 
     } catch (error) {
         console.log(error.message);
@@ -78,36 +111,6 @@ app.get("/", (req, res) => {
 
 app.get("/trendingProducts", (req, res) => {
     res.send(trendingProducts)
-})
-
-app.get("/getSingleProductInfo", async (req, res) => {
-    try {
-    const requestedProduct = req.query.name.replace(/"/g, '')
-    const product = await allproducts.products.find((product) => {
-        if (product.name == requestedProduct) {
-            return product
-        }
-    })
-    if (product) {
-        res.send({
-            message: "Success",
-            satus: 200,
-            product: product
-        })
-
-    } else {
-        res.send({
-            message: "Can't Find The Product",
-            satus: 401,
-        })
-    }
-} catch (error) {
-    res.send({
-        message: error.message,
-        satus: 404,
-    })
-}
-
 })
 
 app.post("/addSingleProduct", async (req, res) => {
