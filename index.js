@@ -1,5 +1,6 @@
 const express = require("express")
 const cors = require("cors")
+const port = process.env.PORT || 5000
 require("dotenv").config()
 const { MongoClient, ObjectId } = require("mongodb")
 const app = express()
@@ -40,7 +41,7 @@ const dbActions = async () => {
             }
         })
 
-        // api for fashion products
+        // api for all products category
         app.get("/productcategory", async (req, res) => {
 
             try {
@@ -150,6 +151,6 @@ dbActions().catch(err => console.log(err.message))
 
 
 
-app.listen(5000, () => {
+app.listen(port, () => {
     console.log(`Express is running on port ${5000}`);
 })
