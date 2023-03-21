@@ -83,6 +83,32 @@ const dbActions = async () => {
 
         })
 
+        // api for getting related data as product category
+        app.get("/getrelateddata", async (req, res) => {
+
+            try {
+                const category = req.query.category;
+                const id = req.query.id;
+                console.log(id);
+
+                const filter = { category: category };
+                const products = await Products.find(filter).toArray();
+                const filteredProducts = products.filter(p => p._id != id)
+                res.send({
+                    message: "Successful",
+                    status: 200,
+                    filteredProducts
+                })
+            } catch (error) {
+                res.send({
+                    message: error.message,
+                    status: 401,
+                })
+            }
+        })
+
+
+
         // api for getting trending products
         app.get("/trendingProducts", async(req, res) => {
             try {
