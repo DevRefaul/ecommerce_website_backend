@@ -88,16 +88,12 @@ const dbActions = async () => {
 
             try {
                 const category = req.query.category;
-                const id = req.query.id;
-                console.log(id);
-
                 const filter = { category: category };
                 const products = await Products.find(filter).toArray();
-                const filteredProducts = products.filter(p => p._id != id)
                 res.send({
                     message: "Successful",
                     status: 200,
-                    filteredProducts
+                    products
                 })
             } catch (error) {
                 res.send({
