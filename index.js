@@ -104,6 +104,26 @@ const dbActions = async () => {
         })
 
 
+        // api for getting trending products
+        app.get("/trendingProducts", async (req, res) => {
+            try {
+
+                const trendingProducts = await TrendingProducts.find({}).toArray()
+                res.send({
+                    message: "Successful",
+                    status: 200,
+                    trendingProducts
+                })
+
+
+            } catch (error) {
+                res.send({
+                    message: "Failed",
+                    status: 401,
+                })
+            }
+        })
+
 
         // api for getting trending products
         app.get("/trendingProducts", async(req, res) => {
