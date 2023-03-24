@@ -126,7 +126,7 @@ const dbActions = async () => {
 
 
         // api for user login
-        app.get("/trendingProducts", async(req, res) => {
+        app.get("/login", async (req, res) => {
             try {
                 
                 const trendingProducts = await TrendingProducts.find({}).toArray()
