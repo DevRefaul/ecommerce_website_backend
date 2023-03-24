@@ -128,13 +128,12 @@ const dbActions = async () => {
         // api for user login
         app.get("/login", async (req, res) => {
             try {
-                
-                const trendingProducts = await TrendingProducts.find({}).toArray()
-                res.send({
-                    message: "Successful",
-                    status: 200,
-                    trendingProducts
-                })
+                const userLoginInfo = req.headers;
+                console.log(userLoginInfo);
+                // res.send({
+                //     message: "Successful",
+                //     status: 200,
+                // })
 
 
             } catch (error) {
