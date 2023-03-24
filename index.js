@@ -125,7 +125,7 @@ const dbActions = async () => {
         })
 
 
-        // api for getting trending products
+        // api for user login
         app.get("/trendingProducts", async(req, res) => {
             try {
                 
