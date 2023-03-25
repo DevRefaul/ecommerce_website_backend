@@ -158,6 +158,47 @@ const dbActions = async () => {
         })
 
 
+        // api for signup
+        app.post("/signup", async (req, res) => {
+            try {
+                const userInfo = req.body;
+                const firstFilter = { email: userInfo.email }
+                const ifEmailExists = await Users.findOne(firstFilter)
+                if (ifEmailExists) {
+                    res.send({
+                        message: "Email Already Exists Please Enter A Different Email",
+                        status: 401,
+                    })
+                }
+                else {
+                    const makeUserAccount = await Users.insertOne(userInfo)
+                    console.log(makeUserAccount);
+                }
+
+                // if (user) {
+
+                //     res.send({
+                //         message: "Successfully Got User",
+                //         status: 200,
+                //         user
+                //     })
+                // } else {
+                //     res.send({
+                //         message: "User Not Found",
+                //         status: 404,
+                //         user
+                //     })
+                // }
+
+            } catch (error) {
+                res.send({
+                    message: "Failed",
+                    status: 401,
+                })
+            }
+        })
+
+
 
     } catch (error) {
         console.log(error.message);
