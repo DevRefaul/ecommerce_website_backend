@@ -128,8 +128,9 @@ const dbActions = async () => {
         // api for user login
         app.get("/loginuser", async (req, res) => {
             try {
-                const userLoginInfo = req.headers;
-                console.log(userLoginInfo);
+                const email = req.query.email;
+                const password = req.query.password;
+                console.log(email, password);
                 // res.send({
                 //     message: "Successful",
                 //     status: 200,
