@@ -16,6 +16,7 @@ const dbActions = async () => {
 
     const Products = client.db("Rafees_Shop").collection("Products")
     const TrendingProducts = client.db("Rafees_Shop").collection("Trending_Products")
+    const Users = client.db("Rafees_Shop").collection("Trending_Products")
 
     try {
 
