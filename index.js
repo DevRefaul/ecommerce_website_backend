@@ -130,7 +130,7 @@ const dbActions = async () => {
             try {
                 const email = req.query.email;
                 const password = req.query.password;
-                console.log(email, password);
+
                 // res.send({
                 //     message: "Successful",
                 //     status: 200,
