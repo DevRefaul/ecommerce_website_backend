@@ -16,7 +16,7 @@ const dbActions = async () => {
 
     const Products = client.db("Rafees_Shop").collection("Products")
     const TrendingProducts = client.db("Rafees_Shop").collection("Trending_Products")
-    const Users = client.db("Rafees_Shop").collection("Trending_Products")
+    const Users = client.db("Rafees_Shop").collection("Users")
 
     try {
 
@@ -131,12 +131,23 @@ const dbActions = async () => {
             try {
                 const email = req.query.email;
                 const password = req.query.password;
+                const filter = { email: email, password: password }
+                const user = await Users.findOne(filter)
 
-                // res.send({
-                //     message: "Successful",
-                //     status: 200,
-                // })
+                if (user) {
 
+                    res.send({
+                        message: "Successfully Got User",
+                        status: 200,
+                        user
+                    })
+                } else {
+                    res.send({
+                        message: "User Not Found",
+                        status: 404,
+                        user
+                    })
+                }
 
             } catch (error) {
                 res.send({
