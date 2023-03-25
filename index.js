@@ -126,7 +126,7 @@ const dbActions = async () => {
 
 
         // api for user login
-        app.get("/login", async (req, res) => {
+        app.get("/loginuser", async (req, res) => {
             try {
                 const userLoginInfo = req.headers;
                 console.log(userLoginInfo);
