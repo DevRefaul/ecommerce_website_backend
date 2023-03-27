@@ -172,23 +172,19 @@ const dbActions = async () => {
                 }
                 else {
                     const makeUserAccount = await Users.insertOne(userInfo)
-                    console.log(makeUserAccount);
+                    if (makeUserAccount.acknowledged === true && makeUserAccount.insertedId) {
+                        res.send({
+                            message: "Successfully Created User",
+                            status: 200,
+                            makeUserAccount
+                        })
+                    } else {
+                        res.send({
+                            message: "Unable To Create User. Please Try Again Later",
+                            status: 400
+                        })
+                    }
                 }
-
-                // if (user) {
-
-                //     res.send({
-                //         message: "Successfully Got User",
-                //         status: 200,
-                //         user
-                //     })
-                // } else {
-                //     res.send({
-                //         message: "User Not Found",
-                //         status: 404,
-                //         user
-                //     })
-                // }
 
             } catch (error) {
                 res.send({
