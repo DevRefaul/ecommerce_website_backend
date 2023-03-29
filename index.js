@@ -195,6 +195,13 @@ const dbActions = async () => {
         })
 
 
+        // api for matching password
+        app.get("/matchpassword", async (req, res) => {
+            const email = req.query.email
+            const pass = req.query.pass
+            console.log(email, pass);
+        })
+
 
     } catch (error) {
         console.log(error.message);
