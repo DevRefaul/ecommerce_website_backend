@@ -199,7 +199,23 @@ const dbActions = async () => {
         app.get("/matchpassword", async (req, res) => {
             const email = req.query.email
             const pass = req.query.pass
-            console.log(email, pass);
+            const filter = { email: email, password: pass }
+            const userExists = await Users.findOne(filter)
+            console.log(userExists);
+            if (userExists._id) {
+                res.send({
+                    message: "User Found",
+                    status: 200,
+                    userFound: True,
+                    userExists
+                })
+            } else {
+                res.send({
+                    message: "User Not Found",
+                    status: 404,
+                    userFound: False,
+                })
+            }
         })
 
 
