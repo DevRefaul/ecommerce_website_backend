@@ -201,7 +201,6 @@ const dbActions = async () => {
             const pass = req.query.pass
             const filter = { email: email, password: pass }
             const userExists = await Users.findOne(filter)
-            console.log(userExists);
             if (userExists._id) {
                 res.send({
                     message: "User Found",
@@ -216,6 +215,27 @@ const dbActions = async () => {
                     userFound: false,
                 })
             }
+        })
+
+
+        // api for matching password
+        app.patch("/updateuserinfo", async (req, res) => {
+            const userInfo = req.body
+            console.log(userInfo);
+            // if (userExists._id) {
+            //     res.send({
+            //         message: "User Found",
+            //         status: 200,
+            //         userFound: true,
+            //         userExists
+            //     })
+            // } else {
+            //     res.send({
+            //         message: "User Not Found",
+            //         status: 404,
+            //         userFound: false,
+            //     })
+            // }
         })
 
 
