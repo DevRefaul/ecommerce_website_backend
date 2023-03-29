@@ -228,21 +228,20 @@ const dbActions = async () => {
 
             const query = { $set: { name: name, email: email, phone: phone, address: address } }
             const updateResult = await Users.updateOne(filter, query, options)
-            console.log(updateResult);
-            // if (userExists._id) {
-            //     res.send({
-            //         message: "User Found",
-            //         status: 200,
-            //         userFound: true,
-            //         userExists
-            //     })
-            // } else {
-            //     res.send({
-            //         message: "User Not Found",
-            //         status: 404,
-            //         userFound: false,
-            //     })
-            // }
+            if (updateResult.acknowledged && updateResult.modifiedCount) {
+                res.send({
+                    message: "User Info Updated",
+                    status: 200,
+                    userUpdated: true,
+                    updateResult
+                })
+            } else {
+                res.send({
+                    message: "Unable To Update User Info",
+                    status: 304,
+                    userUpdated: false,
+                })
+            }
         })
 
 
