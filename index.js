@@ -222,9 +222,12 @@ const dbActions = async () => {
         app.patch("/updateuserinfo", async (req, res) => {
             const userInfo = req.body
             const { name, email, phone, address } = userInfo
-            console.log(userInfo);
-            const query = { name: name, email: email, phone: phone, address: address }
-            const updateResult = await Users.updateOne(query)
+
+            const filter = { email: email }
+            const options = { upsert: true };
+
+            const query = { $set: { name: name, email: email, phone: phone, address: address } }
+            const updateResult = await Users.updateOne(filter, query, options)
             console.log(updateResult);
             // if (userExists._id) {
             //     res.send({
