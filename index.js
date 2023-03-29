@@ -206,14 +206,14 @@ const dbActions = async () => {
                 res.send({
                     message: "User Found",
                     status: 200,
-                    userFound: True,
+                    userFound: true,
                     userExists
                 })
             } else {
                 res.send({
                     message: "User Not Found",
                     status: 404,
-                    userFound: False,
+                    userFound: false,
                 })
             }
         })
