@@ -221,7 +221,11 @@ const dbActions = async () => {
         // api for matching password
         app.patch("/updateuserinfo", async (req, res) => {
             const userInfo = req.body
+            const { name, email, phone, address } = userInfo
             console.log(userInfo);
+            const query = { name: name, email: email, phone: phone, address: address }
+            const updateResult = await Users.updateOne(query)
+            console.log(updateResult);
             // if (userExists._id) {
             //     res.send({
             //         message: "User Found",
