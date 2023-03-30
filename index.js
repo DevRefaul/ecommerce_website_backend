@@ -195,6 +195,17 @@ const dbActions = async () => {
         })
 
 
+        // api for getting user data
+        app.get("/getuserdata", async (req, res) => {
+            const email = req.query.email;
+            const filter = { email }
+            const userData = await Users.findOne(filter);
+            console.log(userData);
+
+        })
+
+
+
         // api for matching password
         app.get("/matchpassword", async (req, res) => {
             const email = req.query.email
