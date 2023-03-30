@@ -200,7 +200,18 @@ const dbActions = async () => {
             const email = req.query.email;
             const filter = { email }
             const userData = await Users.findOne(filter);
-            console.log(userData);
+            if (userData._id) {
+                res.send({
+                    message: "Successfully Got User",
+                    status: 200,
+                    userData
+                })
+            } else {
+                res.send({
+                    message: "Failed To Get User",
+                    status: 404,
+                })
+            }
 
         })
 
