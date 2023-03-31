@@ -274,6 +274,18 @@ const dbActions = async () => {
             const filter = { email };
             const orders = await Orders.find(filter).toArray();
             console.log(orders);
+            if (orders.length) {
+                res.send({
+                    message: "Found Orders",
+                    status: 200,
+                    orders
+                })
+            } else {
+                res.send({
+                    message: "Found No Orders",
+                    status: 404,
+                })
+            }
         })
 
 
