@@ -268,6 +268,16 @@ const dbActions = async () => {
         })
 
 
+        // api for getting user orders
+        app.get("/userorders", async (req, res) => {
+            const email = req.query.email;
+            const filter = { email };
+            const orders = await Orders.find(filter).toArray();
+            console.log(orders);
+        })
+
+
+
     } catch (error) {
         console.log(error.message);
     }
