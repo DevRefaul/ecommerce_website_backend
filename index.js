@@ -295,7 +295,7 @@ const dbActions = async () => {
             const { _id, name, price } = req.body.product;
 
             const cartItem = {
-                email, _id, name, price
+                email, productId: _id, name, price
             }
 
             const cart = await Cart.insertOne(cartItem)
@@ -309,6 +309,27 @@ const dbActions = async () => {
                 res.send({
                     message: "Can't Add Product To Cart",
                     status: 408,
+                })
+            }
+        })
+
+
+        // api for getting user  cart orders to db
+        app.get("/getcartitems", async (req, res) => {
+            const email = req.query.email;
+            const filter = { email }
+
+            const cartItems = await Cart.find(filter).toArray()
+            if (cartItems.length) {
+                res.send({
+                    message: "Successfully Got Cart Items",
+                    status: 200,
+                    cartItems
+                })
+            } else {
+                res.send({
+                    message: "No Products Found",
+                    status: 404,
                 })
             }
         })
