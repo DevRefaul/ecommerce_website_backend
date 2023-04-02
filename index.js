@@ -298,21 +298,19 @@ const dbActions = async () => {
                 email, _id, name, price
             }
 
-
-            // const orders = await Orders.find(filter).toArray();
-            // if (orders.length) {
-            //     res.send({
-            //         message: "Found Orders",
-            //         status: 200,
-            //         orders
-            //     })
-            // } else {
-            //     res.send({
-            //         message: "Found No Orders",
-            //         status: 404,
-            //         orders
-            //     })
-            // }
+            const cart = await Cart.insertOne(cartItem)
+            if (cart.acknowledged && cart.insertedId) {
+                res.send({
+                    message: "Successfully Added To Cart",
+                    status: 200,
+                    cart
+                })
+            } else {
+                res.send({
+                    message: "Can't Add Product To Cart",
+                    status: 408,
+                })
+            }
         })
 
 
