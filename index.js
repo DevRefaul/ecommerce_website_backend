@@ -288,6 +288,30 @@ const dbActions = async () => {
             }
         })
 
+        // api for adding user  cart orders to db
+        app.post("/cartitemtodb", async (req, res) => {
+            const email = req.body.user;
+            const product = req.body.product;
+
+            console.log(email, product);
+
+            // const filter = { email };
+            // const orders = await Orders.find(filter).toArray();
+            // if (orders.length) {
+            //     res.send({
+            //         message: "Found Orders",
+            //         status: 200,
+            //         orders
+            //     })
+            // } else {
+            //     res.send({
+            //         message: "Found No Orders",
+            //         status: 404,
+            //         orders
+            //     })
+            // }
+        })
+
 
 
     } catch (error) {
