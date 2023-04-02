@@ -291,9 +291,12 @@ const dbActions = async () => {
         // api for adding user  cart orders to db
         app.post("/cartitemtodb", async (req, res) => {
             const email = req.body.user;
-            const product = req.body.product;
+            const { _id, name, price } = req.body.product;
 
-            console.log(email, product);
+            const order = {
+                email, _id, name, price
+            }
+
 
             // const filter = { email };
             // const orders = await Orders.find(filter).toArray();
