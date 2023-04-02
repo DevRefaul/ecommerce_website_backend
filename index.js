@@ -335,6 +335,28 @@ const dbActions = async () => {
         })
 
 
+        // api for deleting item from cart
+        app.get("/removeitemfromcart", async (req, res) => {
+            const itemId = req.body._id
+            const filter = { itemId }
+
+            const deleteResponse = await Cart.deleteOne(filter);
+            console.log(deleteResponse);
+            // if (cartItems.length) {
+            //     res.send({
+            //         message: "Successfully Got Cart Items",
+            //         status: 200,
+            //         cartItems
+            //     })
+            // } else {
+            //     res.send({
+            //         message: "No Products Found",
+            //         status: 404,
+            //     })
+            // }
+        })
+
+
 
     } catch (error) {
         console.log(error.message);
