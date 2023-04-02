@@ -291,7 +291,7 @@ const dbActions = async () => {
 
         // api for adding user  cart orders to db
         app.post("/cartitemtodb", async (req, res) => {
-            const email = req.body.user;
+            const email = req.body.user.email;
             const { _id, name, price } = req.body.product;
 
             const cartItem = {
