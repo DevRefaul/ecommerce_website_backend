@@ -336,21 +336,41 @@ const dbActions = async () => {
 
 
         // api for deleting item from cart
-        app.get("/removeitemfromcart", async (req, res) => {
+        app.delete("/removeitemfromcart", async (req, res) => {
             const itemId = req.body._id
             const filter = { itemId }
 
             const deleteResponse = await Cart.deleteOne(filter);
+            if (deleteResponse.acknowledged && deleteResponse.deletedCount) {
+                res.send({
+                    message: "Successfully Removed Item From Cart",
+                    status: 200,
+                    deleteResponse
+                })
+            } else {
+                res.send({
+                    message: "Failed To Remove Item",
+                    status: 404,
+                })
+            }
+        })
+
+        // api for deleting all items from cart
+        app.delete("/removeallitemfromcart", async (req, res) => {
+            const email = req.body.email
+            const filter = { email }
+
+            const deleteResponse = await Cart.deleteMany(filter);
             console.log(deleteResponse);
-            // if (cartItems.length) {
+            // if (deleteResponse.acknowledged && deleteResponse.deletedCount) {
             //     res.send({
-            //         message: "Successfully Got Cart Items",
+            //         message: "Successfully Removed Item From Cart",
             //         status: 200,
-            //         cartItems
+            //         deleteResponse
             //     })
             // } else {
             //     res.send({
-            //         message: "No Products Found",
+            //         message: "Failed To Remove Item",
             //         status: 404,
             //     })
             // }
