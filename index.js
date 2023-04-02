@@ -356,24 +356,22 @@ const dbActions = async () => {
         })
 
         // api for deleting all items from cart
-        app.delete("/removeallitemfromcart", async (req, res) => {
-            const email = req.body.email
+        app.delete("/deleteall", async (req, res) => {
+            const email = req.query.email
             const filter = { email }
-
-            const deleteResponse = await Cart.deleteMany(filter);
-            console.log(deleteResponse);
-            // if (deleteResponse.acknowledged && deleteResponse.deletedCount) {
-            //     res.send({
-            //         message: "Successfully Removed Item From Cart",
-            //         status: 200,
-            //         deleteResponse
-            //     })
-            // } else {
-            //     res.send({
-            //         message: "Failed To Remove Item",
-            //         status: 404,
-            //     })
-            // }
+            const removedResponse = await Cart.deleteMany(filter)
+            if (removedResponse.acknowledged && removedResponse.deletedCount) {
+                res.send({
+                    message: "Successfully Removed All Items From Cart",
+                    status: 200,
+                    removedResponse
+                })
+            } else {
+                res.send({
+                    message: "Failed To Remove Items",
+                    status: 404,
+                })
+            }
         })
 
 
