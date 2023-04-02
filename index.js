@@ -18,6 +18,7 @@ const dbActions = async () => {
     const TrendingProducts = client.db("Rafees_Shop").collection("Trending_Products")
     const Users = client.db("Rafees_Shop").collection("Users")
     const Orders = client.db("Rafees_Shop").collection("Orders")
+    const Cart = client.db("Rafees_Shop").collection("Cart")
 
     try {
 
@@ -293,12 +294,11 @@ const dbActions = async () => {
             const email = req.body.user;
             const { _id, name, price } = req.body.product;
 
-            const order = {
+            const cartItem = {
                 email, _id, name, price
             }
 
 
-            // const filter = { email };
             // const orders = await Orders.find(filter).toArray();
             // if (orders.length) {
             //     res.send({
