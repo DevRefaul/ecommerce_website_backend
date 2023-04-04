@@ -334,6 +334,25 @@ const dbActions = async () => {
             }
         })
 
+        // api for getting user  cart orders to db
+        app.post("/addorder", async (req, res) => {
+            const orderData = req.body;
+
+            const orderResponse = await Orders.insertOne(orderData)
+            if (orderResponse.acknowledged && orderResponse.insertedId) {
+                res.send({
+                    message: "Successfully Placed Orders",
+                    status: 200,
+                    orderResponse
+                })
+            } else {
+                res.send({
+                    message: "Can't Placed Order",
+                    status: 501,
+                })
+            }
+        })
+
 
         // api for deleting item from cart
         app.delete("/removeitemfromcart", async (req, res) => {
