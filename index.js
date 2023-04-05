@@ -391,22 +391,22 @@ const dbActions = async () => {
         app.get("/getorder", async (req, res) => {
             const orderId = req.query.id;
 
-            const filter = { _id: orderId }
+            const filter = { _id: new ObjectId(orderId) }
 
             const orderResponse = await Orders.findOne(filter)
-            console.log(orderResponse);
-            // if (orderResponse.acknowledged && orderResponse.insertedId) {
-            //     res.send({
-            //         message: "Successfully Placed Orders",
-            //         status: 200,
-            //         orderResponse
-            //     })
-            // } else {
-            //     res.send({
-            //         message: "Can't Placed Order",
-            //         status: 501,
-            //     })
-            // }
+
+            if (orderResponse.cartItemsData.length && orderResponse._id) {
+                res.send({
+                    message: "Successfully Got Orders",
+                    status: 200,
+                    orderResponse
+                })
+            } else {
+                res.send({
+                    message: "Can't Get Order",
+                    status: 404,
+                })
+            }
         })
 
 
