@@ -26,7 +26,20 @@ const dbActions = async () => {
     // function for calculating total amount to pay
     const calculateOrderAmount = (items) => {
 
-        console.log(items);
+        let billAmount = 0;
+        items.cartItemsData.map(item => {
+
+            if (item.price?.includes(",")) {
+                const newPrice = Number(item.price.replace(/,/g, ""));
+                (item.price = newPrice);
+            }
+
+            const productTotalPrice = Number(item.price) * Number(item.quantity)
+            billAmount = billAmount + productTotalPrice;
+
+        })
+        return (billAmount);
+
     };
 
     try {
