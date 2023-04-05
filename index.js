@@ -28,7 +28,7 @@ const dbActions = async () => {
         // Replace this constant with a calculation of the order's amount
         // Calculate the order total on the server to prevent
         // people from directly manipulating the amount on the client
-        return 1400;
+        console.log(items);
     };
 
     try {
@@ -387,6 +387,31 @@ const dbActions = async () => {
         })
 
 
+        // api for getting user  orders
+        app.get("/getorder", async (req, res) => {
+            const orderId = req.query.id;
+
+            const filter = { _id: orderId }
+
+            const orderResponse = await Orders.findOne(filter)
+            console.log(orderResponse);
+            // if (orderResponse.acknowledged && orderResponse.insertedId) {
+            //     res.send({
+            //         message: "Successfully Placed Orders",
+            //         status: 200,
+            //         orderResponse
+            //     })
+            // } else {
+            //     res.send({
+            //         message: "Can't Placed Order",
+            //         status: 501,
+            //     })
+            // }
+        })
+
+
+
+
         // api for deleting item from cart
         app.delete("/removeitemfromcart", async (req, res) => {
             const itemId = req.body._id
@@ -440,9 +465,9 @@ const dbActions = async () => {
                 },
             });
 
-            res.send({
-                clientSecret: paymentIntent.client_secret,
-            });
+            // res.send({
+            //     clientSecret: paymentIntent.client_secret,
+            // });
         });
 
 
