@@ -21,6 +21,16 @@ const dbActions = async () => {
     const Orders = client.db("Rafees_Shop").collection("Orders")
     const Cart = client.db("Rafees_Shop").collection("Cart")
 
+
+
+    // function for calculating total amount to pay
+    const calculateOrderAmount = (items) => {
+        // Replace this constant with a calculation of the order's amount
+        // Calculate the order total on the server to prevent
+        // people from directly manipulating the amount on the client
+        return 1400;
+    };
+
     try {
 
         // basic api
