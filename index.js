@@ -313,6 +313,28 @@ const dbActions = async () => {
             }
         })
 
+        // api for removing  cart items from db
+        app.delete("/removeCartItem", async (req, res) => {
+            const email = req.query.email;
+
+            const filter = { email }
+
+            const deleteResponse = await Cart.deleteMany(filter)
+
+            if (deleteResponse.acknowledged && deleteResponse.deletedCount) {
+                res.send({
+                    message: "Successfully Removed Item From Cart",
+                    status: 200,
+                    deleteResponse
+                })
+            } else {
+                res.send({
+                    message: "Can't Removed Item From Cart",
+                    status: 501,
+                })
+            }
+        })
+
 
         // api for getting user  cart orders to db
         app.get("/getcartitems", async (req, res) => {
