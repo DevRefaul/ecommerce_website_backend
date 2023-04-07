@@ -438,7 +438,7 @@ const dbActions = async () => {
             const updateResponse = await Orders.updateOne(filter, updatedDoc, options)
 
 
-            if (updateResponse.acknowledged && updateResponse.modifiedCount && updateResponse.matchedCount > 0) {
+            if (updateResponse.acknowledged && updateResponse.modifiedCount && updateResponse.matchedCount > "0") {
                 res.send({
                     message: "Successfully Updated Order",
                     status: 200,
