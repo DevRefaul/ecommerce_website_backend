@@ -421,7 +421,7 @@ const dbActions = async () => {
         })
 
 
-        // api for getting user  orders
+        // api for updating user  orders
         app.patch("/updateorder", async (req, res) => {
             const { orderId, paymentInfo } = req.body;
 
