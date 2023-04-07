@@ -435,21 +435,21 @@ const dbActions = async () => {
             }
             const options = { upsert: true };
 
-            const orderResponse = await Orders.updateOne(filter, updatedDoc, options)
-            console.log(orderResponse);
+            const updateResponse = await Orders.updateOne(filter, updatedDoc, options)
 
-            //             if (orderResponse.cartItemsData.length && orderResponse._id) {
-            //                 res.send({
-            //                     message: "Successfully Got Orders",
-            //                     status: 200,
-            //                     orderResponse
-            //                 })
-            //             } else {
-            //                 res.send({
-            //                     message: "Can't Get Order",
-            //                     status: 404,
-            //                 })
-            //             }
+
+            if (updateResponse.acknowledged && updateResponse.modifiedCount && updateResponse.matchedCount > 0) {
+                res.send({
+                    message: "Successfully Updated Order",
+                    status: 200,
+                    updateResponse
+                })
+            } else {
+                res.send({
+                    message: "Failed To Update Order",
+                    status: 404,
+                })
+            }
         })
 
 
