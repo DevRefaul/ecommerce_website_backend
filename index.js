@@ -421,6 +421,38 @@ const dbActions = async () => {
         })
 
 
+        // api for getting user  orders
+        app.patch("/updateorder", async (req, res) => {
+            const { orderId, paymentInfo } = req.body;
+
+            const filter = { _id: new ObjectId(orderId) }
+
+            const updatedDoc = {
+                $set: {
+                    transactionId: paymentInfo,
+                    payment: "PAID"
+                },
+            }
+            const options = { upsert: true };
+
+            const orderResponse = await Orders.updateOne(filter, updatedDoc, options)
+            console.log(orderResponse);
+
+            //             if (orderResponse.cartItemsData.length && orderResponse._id) {
+            //                 res.send({
+            //                     message: "Successfully Got Orders",
+            //                     status: 200,
+            //                     orderResponse
+            //                 })
+            //             } else {
+            //                 res.send({
+            //                     message: "Can't Get Order",
+            //                     status: 404,
+            //                 })
+            //             }
+        })
+
+
 
 
         // api for deleting item from cart
@@ -471,9 +503,9 @@ const dbActions = async () => {
             const paymentIntent = await stripe.paymentIntents.create({
                 amount: calculateOrderAmount(items),
                 currency: "usd",
-                automatic_payment_methods: {
-                    enabled: true,
-                },
+                "payment_method_types": [
+                    "card"
+                ]
             });
 
             res.send({
