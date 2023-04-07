@@ -35,7 +35,7 @@ const dbActions = async () => {
             }
 
             const productTotalPrice = Number(item.price) * Number(item.quantity)
-            billAmount = billAmount + productTotalPrice;
+            billAmount = billAmount + productTotalPrice * 100;
 
         })
         return (billAmount);
