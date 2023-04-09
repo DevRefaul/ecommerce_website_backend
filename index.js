@@ -427,7 +427,8 @@ const dbActions = async () => {
 
             const filter = { email }
 
-            // const orderResponse = await Orders.find(filter).toArray()
+            const orderResponse = await Orders.find(filter).toArray()
+            console.log(orderResponse);
 
             // if (orderResponse.cartItemsData.length && orderResponse._id) {
             //     res.send({
