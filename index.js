@@ -421,6 +421,29 @@ const dbActions = async () => {
         })
 
 
+        // api for getting user all  orders
+        app.get("/getallorders", async (req, res) => {
+            const email = req.query.email;
+
+            const filter = { email }
+
+            // const orderResponse = await Orders.find(filter).toArray()
+
+            // if (orderResponse.cartItemsData.length && orderResponse._id) {
+            //     res.send({
+            //         message: "Successfully Got Orders",
+            //         status: 200,
+            //         orderResponse
+            //     })
+            // } else {
+            //     res.send({
+            //         message: "Can't Get Order",
+            //         status: 404,
+            //     })
+            // }
+        })
+
+
         // api for updating user  orders
         app.patch("/updateorder", async (req, res) => {
             const { orderId, paymentInfo } = req.body;
