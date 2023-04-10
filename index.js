@@ -427,22 +427,20 @@ const dbActions = async () => {
 
             const filter = { email }
 
-
             const orderResponse = await Orders.find(filter).toArray()
-            console.log(orderResponse);
 
-            // if (orderResponse.cartItemsData.length && orderResponse._id) {
-            //     res.send({
-            //         message: "Successfully Got Orders",
-            //         status: 200,
-            //         orderResponse
-            //     })
-            // } else {
-            //     res.send({
-            //         message: "Can't Get Order",
-            //         status: 404,
-            //     })
-            // }
+            if (orderResponse.length && orderResponse._id) {
+                res.send({
+                    message: "Successfully Found Orders",
+                    status: 200,
+                    orderResponse
+                })
+            } else {
+                res.send({
+                    message: "Didn't Find Any Orders",
+                    status: 404,
+                })
+            }
         })
 
 
