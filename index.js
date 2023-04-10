@@ -428,8 +428,9 @@ const dbActions = async () => {
             const filter = { email }
 
             const orderResponse = await Orders.find(filter).toArray()
+            console.log(orderResponse);
 
-            if (orderResponse.length && orderResponse._id) {
+            if (orderResponse.length) {
                 res.send({
                     message: "Successfully Found Orders",
                     status: 200,
