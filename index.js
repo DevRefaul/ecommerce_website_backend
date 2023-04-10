@@ -421,30 +421,6 @@ const dbActions = async () => {
         })
 
 
-        // api for getting user all  orders
-        app.get("/getallorders", async (req, res) => {
-            const email = req.query.email;
-
-            const filter = { email }
-
-            const orderResponse = await Orders.find(filter).toArray()
-            console.log(orderResponse);
-
-            if (orderResponse.length) {
-                res.send({
-                    message: "Successfully Found Orders",
-                    status: 200,
-                    orderResponse
-                })
-            } else {
-                res.send({
-                    message: "Didn't Find Any Orders",
-                    status: 404,
-                })
-            }
-        })
-
-
         // api for updating user  orders
         app.patch("/updateorder", async (req, res) => {
             const { orderId, paymentInfo } = req.body;
