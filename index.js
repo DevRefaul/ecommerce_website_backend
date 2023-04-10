@@ -425,6 +425,7 @@ const dbActions = async () => {
         app.get("/getallorders", async (req, res) => {
             const email = req.query.email;
 
+            const filter = { email }
 
 
             const orderResponse = await Orders.find(filter).toArray()
