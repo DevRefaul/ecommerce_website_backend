@@ -336,9 +336,18 @@ const dbActions = async () => {
 
             const orderInfo = req.body;
             console.log(orderInfo);
+            const filter = { _id: new ObjectId(orderInfo.orderId) };
 
+            const updatedDoc = {
+                $set: {
+                    status: orderInfo.orderStatus
+                }
+            }
 
-            // const orders = await Orders.find({}).toArray();
+            const options = { upsert: true }
+
+            const updatedResponse = await Orders.updateOne(filter, updatedDoc, options)
+            console.log(updatedResponse);
             // if (orders.length) {
             //     res.send({
             //         message: "Found Orders",
