@@ -334,11 +334,11 @@ const dbActions = async () => {
         // api for updating order status
         app.patch("/addreview", async (req, res) => {
 
-            const { productId, reviewText, name } = req.body;
+            const { productId, reviewText, name, email } = req.body;
 
             const filter = { _id: new ObjectId(productId) };
 
-            const review = { name, reviewText }
+            const review = { name, email, reviewText }
 
             const updatedDoc = {
                 $push: {
