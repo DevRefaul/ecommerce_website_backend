@@ -334,33 +334,36 @@ const dbActions = async () => {
         // api for updating order status
         app.patch("/addreview", async (req, res) => {
 
-            const reviewInfo = req.body;
-            console.log(reviewInfo);
-            // const filter = { _id: new ObjectId(orderInfo.orderId) };
+            const { productId, reviewText, name } = req.body;
 
-            // const updatedDoc = {
-            //     $set: {
-            //         status: orderInfo.orderStatus
-            //     }
-            // }
+            const filter = { _id: new ObjectId(productId) };
 
-            // const options = { upsert: true }
+            const review = { name, reviewText }
 
-            // const updatedResponse = await Orders.updateOne(filter, updatedDoc, options)
+            const updatedDoc = {
+                $push: {
+                    reviews: review
+                }
+            }
 
-            // if (updatedResponse.acknowledged && updatedResponse.modifiedCount && updatedResponse.matchedCount) {
-            //     res.send({
-            //         message: "Updated Order Status",
-            //         status: 200,
-            //         updatedResponse
-            //     })
-            // } else {
-            //     res.send({
-            //         message: "Failed To Update Order Status",
-            //         status: 404,
-            //         updatedResponse
-            //     })
-            // }
+            const options = { upsert: true }
+
+            const updatedResponse = await Products.updateOne(filter, updatedDoc, options)
+
+
+            if (updatedResponse.acknowledged && updatedResponse.modifiedCount && updatedResponse.matchedCount) {
+                res.send({
+                    message: "Added Review",
+                    status: 200,
+                    updatedResponse
+                })
+            } else {
+                res.send({
+                    message: "Failed To Add Review",
+                    status: 404,
+                    updatedResponse
+                })
+            }
         })
 
 
