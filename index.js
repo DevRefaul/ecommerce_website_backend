@@ -348,19 +348,19 @@ const dbActions = async () => {
 
             const updatedResponse = await Orders.updateOne(filter, updatedDoc, options)
             console.log(updatedResponse);
-            // if (orders.length) {
-            //     res.send({
-            //         message: "Found Orders",
-            //         status: 200,
-            //         orders
-            //     })
-            // } else {
-            //     res.send({
-            //         message: "Found No Orders",
-            //         status: 404,
-            //         orders
-            //     })
-            // }
+            if (updatedResponse.acknowledged && updatedResponse.modifiedCount && updatedResponse.matchedCount) {
+                res.send({
+                    message: "Updated Order Status",
+                    status: 200,
+                    updatedResponse
+                })
+            } else {
+                res.send({
+                    message: "Failed To Update Order Status",
+                    status: 404,
+                    updatedResponse
+                })
+            }
         })
 
         // api for adding user  cart orders to db
