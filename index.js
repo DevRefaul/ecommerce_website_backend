@@ -332,10 +332,43 @@ const dbActions = async () => {
 
 
         // api for updating order status
+        app.patch("/addreview", async (req, res) => {
+
+            const reviewInfo = req.body;
+            console.log(reviewInfo);
+            // const filter = { _id: new ObjectId(orderInfo.orderId) };
+
+            // const updatedDoc = {
+            //     $set: {
+            //         status: orderInfo.orderStatus
+            //     }
+            // }
+
+            // const options = { upsert: true }
+
+            // const updatedResponse = await Orders.updateOne(filter, updatedDoc, options)
+
+            // if (updatedResponse.acknowledged && updatedResponse.modifiedCount && updatedResponse.matchedCount) {
+            //     res.send({
+            //         message: "Updated Order Status",
+            //         status: 200,
+            //         updatedResponse
+            //     })
+            // } else {
+            //     res.send({
+            //         message: "Failed To Update Order Status",
+            //         status: 404,
+            //         updatedResponse
+            //     })
+            // }
+        })
+
+
+        // api for updating order status
         app.patch("/updateorderstate", async (req, res) => {
 
             const orderInfo = req.body;
-            console.log(orderInfo);
+
             const filter = { _id: new ObjectId(orderInfo.orderId) };
 
             const updatedDoc = {
@@ -347,7 +380,7 @@ const dbActions = async () => {
             const options = { upsert: true }
 
             const updatedResponse = await Orders.updateOne(filter, updatedDoc, options)
-            console.log(updatedResponse);
+
             if (updatedResponse.acknowledged && updatedResponse.modifiedCount && updatedResponse.matchedCount) {
                 res.send({
                     message: "Updated Order Status",
