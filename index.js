@@ -568,7 +568,7 @@ const dbActions = async () => {
             const email = req.query.email
             const filter = { email }
             const removedResponse = await Cart.deleteMany(filter)
-            if (removedResponse.acknowledged && removedResponse.deletedCount) {
+            if (removedResponse.acknowledged) {
                 res.send({
                     message: "Successfully Removed All Items From Cart",
                     status: 200,
