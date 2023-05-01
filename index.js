@@ -603,6 +603,39 @@ const dbActions = async () => {
         });
 
 
+        app.get("/searchedproduct", async (req, res) => {
+
+            const searchedItem = req.query.name;
+
+            const allProducts = await Products.find({}).toArray()
+
+
+            const searchedProducts = allProducts.filter(product => {
+                const productName = product.name.toLowerCase()
+                if (productName.includes(searchedItem)) {
+                    return product
+                }
+                else {
+                    return []
+                }
+            })
+
+            if (searchedProducts.length) {
+                res.send({
+                    message: "Products Found",
+                    status: 201,
+                    searchedProducts
+                })
+            } else {
+                res.send({
+                    message: "Products Not Found",
+                    status: 404
+                })
+            }
+
+
+        })
+
 
 
     } catch (error) {
